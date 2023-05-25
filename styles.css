@@ -1,0 +1,148 @@
+:root {
+    /* Primary */
+    --softBlue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    /* Neutral */
+    --VeryDarkBlue1: hsl(217, 54%, 11%); /* Main BG */
+    --veryDarkBlue2: hsl(216, 50%, 16%); /* Card BG */
+    --veryDarkBlue3: hsl(215, 32%, 27%); /* Line */
+    --white: hsl(0, 0%, 100%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--VeryDarkBlue1);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    background-color: var(--veryDarkBlue2);
+    border-radius: 15px;
+    margin: 4rem 1.5rem;
+    padding: 1.5rem;
+    min-width: 270px;
+    max-width: 315px;
+}
+
+/* Section Image */
+.section-image {
+    display: flex;
+    border-radius: 15px;
+    position: relative;
+}
+
+.section-image img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.section-image:hover {
+    cursor: pointer;
+    background-color: var(--cyan);
+    transition: .15s ease-in-out;
+}
+
+.section-image img:hover {
+    opacity: .5;
+    transition: .15s ease-in-out;
+}
+
+.section-image:hover::after {
+    content: url(images/icon-view.svg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Section Text */
+h1 {
+    color: var(--white);
+    margin-block: 1rem;
+    font-weight: 400;
+}
+
+p {
+    color: var(--softBlue);
+    line-height: 1.6rem;
+    font-weight: 300;
+}
+
+.section-text > div {
+    display: flex;
+    justify-content: space-between;
+    margin-block: .8rem;
+}
+
+.section-text > div > * {
+    display: flex;
+    align-items: center;
+    gap: .35rem
+}
+
+.section-text > div span {
+    display: flex;
+}
+
+h2 {
+    color: var(--cyan);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* Horizontal Rule */
+hr {
+    border: none;
+    border-top: 1px solid var(--veryDarkBlue3);
+}
+
+/* Section Last */
+.section-last {
+    display: flex;
+    gap: .9rem;
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.section-last img {
+    border: 1px solid var(--white);
+    border-radius: 100px;
+    width: 30px;
+}
+
+.section-last span {
+    color: var(--white);
+}
+
+.section-last span:hover, h1:hover {
+    color: var(--cyan);
+    cursor: pointer;
+}
+
+/* Footer */
+footer { 
+    color: var(--softBlue);
+    font-size: 11px; 
+    text-align: center; 
+}
+
+footer a { 
+    text-decoration: none;
+    color: var(--white); 
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        margin-block: 9rem;
+    }
+}
